@@ -1,0 +1,97 @@
+== 2023-05-21 13:09 Bowen ==
+一次就成功了，準備要上架
+
+撰寫完整 README.md 要包含
+. 要包含安裝 python3 -m pip install youtube-transcript-downloader
+. 要包含套件用法 from youtube_transcript_downloader import youtube_transcript_downloader
+. 要包含cli用法 python3 -m youtube_transcript_downloader
+. 用繁體中文寫
+
+== 2023-05-21 12:39 Bowen ==
+author_bot.py
+
+模擬作者可以應答與讀書會的機器人
+輸入作者關鍵字以及書名關鍵字
+搜尋台灣相關的影片與抓取字幕
+搜尋英語系相關的影片與抓取字幕
+
+師父的最後修練：創業者如何預見圓滿終局
+
+no_transcript
+https://www.youtube.com/watch?v=TzH2tZUQfks
+
+no_transcript
+https://www.youtube.com/watch?v=QKofH1PkgXE
+
+no_transcript
+https://www.youtube.com/watch?v=g46df3Az6B8
+
+--
+
+Finish Big Bo Burlingham
+
+https://www.youtube.com/watch?v=HEquaCEckwg
+
+https://www.youtube.com/watch?v=1UD8L0G7nIc
+
+https://www.youtube.com/watch?v=84xF0B-yUn4&t=311s
+
+https://www.youtube.com/watch?v=wdBT-u-Uv2Y
+
+https://www.youtube.com/watch?v=o9ycWt9JbK0
+
+
+-- youtube_transcript_downloader.py
+
+{
+  "user": "cbh@cameo.tw",
+  "type": "creative_namer",
+  "time": "2023-05-21T04:21:18Z",
+  "id": "23b9242f-2f62-42e8-bdbe-f65241d2ac5a",
+  "file_path": "data/users/cbh_cameo_tw/creative_namer/type_creative_namer_time_2023-05-21T04_21_18Z_id_23b9242f-2f62-42e8-bdbe-f65241d2ac5a.json",
+  "url":"https://www.youtube.com/watch?v=TzH2tZUQfks",
+  "project_description": "我想要做一個專案，是關於，能夠把讀書會的youtube相關關鍵字輸入之後，就可以全自動去網路上抓blog以及youtube影片的字幕，蒐集該書籍有關的資料之後，製作為交談電腦人，作者人的那種感覺，好像作者親臨現場",
+  "title": "以賣掉公司為目標的經營反而可以賺 ! 大 ! 錢 ! 創業教父三招出場策略大公開 ! 《 師父的最後修練》｜旅行說書｜《師父》暢銷作者續集 ! ｜水丰刀
+",
+  "project_name_en_2": "virtual_author_conversations",
+  "project_name_en_3": "book_related_content_collector",
+  "project_name_en_4": "automated_book_discussion_bot",
+  "project_name_en_5": "youtube_book_keyword_scraper",
+  "project_name_en_6": "author_persona_chatbot",
+  "project_name_en_7": "literary_discussion_generator",
+  "project_name_en_8": "book_content_aggregator",
+  "project_name_en_9": "book_club_conversation_bot",
+  "project_name_en_10": "author_insights_chatbot"
+}
+
+-- 我要寫一個 .py
+檔名: youtube_transcript_downloader.py
+目的: 我要做一個可以抓取youtube字幕的抓取工具，儲存變成文字json檔案
+用法: 同時要支援 cli 可以參數運用
+用法: 同時要支援 import 套件可以運用呼叫
+輸入參數: 一個或多個 youtube 網址
+輸入參數: 使用者名稱，預設是 cbh@cameo.tw
+輸入參數: 輸出檔案群.json要放到哪個folder, 預設放在 data/users/[使用者名稱]/youtube_transcript_downloader/[日期]/*.json
+輸出檔案群: 根據輸入的 youtube 網址輸出類似這樣的多個 json 內容檔案
+{
+  "user": "cbh@cameo.tw",
+  "type": "youtube_transcript_downloader",
+  "time": "2023-05-21T04:21:18Z",
+  "id": "23b9242f-2f62-42e8-bdbe-f65241d2ac5a",
+  "file_path": "data/users/cbh_cameo_tw/youtube_transcript_downloader/2023-05-21/type_youtube_transcript_downloader_time_2023-05-21T04_21_18Z_id_23b9242f-2f62-42e8-bdbe-f65241d2ac5a.json",
+  "url":"https://www.youtube.com/watch?v=HEquaCEckwg",
+  "transcript": "0:00
+summary of finish big by bill birlingham
+0:04
+written by lee schullery in quick read
+0:06
+narrated
+0:07
+by alex smith introduction
+0:11
+the truth is that every entrepreneur
+...
+"
+}
+例外: 如果其中一個影片URL抓不到 transcript 也沒有關係，印出抓不到的訊息，就可以忽略就好，不要跳出離開程式碼
+
