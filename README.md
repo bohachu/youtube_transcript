@@ -76,6 +76,8 @@ the truth is that every entrepreneur
 ```
 
 ## Release notes
+- python3 -m to_pip -n youtube-transcript -v 1.0.4 youtube_transcript.py
+  - 2023-05-21 14:19 Bowen 改成可以 setup.py 用 github 安裝的方法，避免pypi當站
 - python3 -m to_pip -n youtube_transcript -v 1.0.3 youtube_transcript.py
   - 2023-05-21 13:28
   - 改名字從 youtube_transcript_downloader to youtube_transcript 避免撞名 pypi
