@@ -76,4 +76,5 @@ the truth is that every entrepreneur
 
 ## Release notes
 - python3 -m to_pip -n youtube_transcript_downloader -v 1.0.1 youtube_transcript_downloader.py
+  - 2023-05-21 13:21 Bowen
   - 新增加 README.md 完整說明
