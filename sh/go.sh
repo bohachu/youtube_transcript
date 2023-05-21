@@ -1,1 +1,1 @@
-python3 youtube_transcript_downloader.py 'https://www.youtube.com/watch?v=HEquaCEckwg'
+python3 youtube_transcript.py 'https://www.youtube.com/watch?v=HEquaCEckwg'
