@@ -1,1 +1,1 @@
-python3 youtube_transcript.py 'https://www.youtube.com/watch?v=HEquaCEckwg'
+python3 youtube_transcript.py 'https://www.youtube.com/watch?v=HEquaCEckwg' 'https://www.youtube.com/watch?v=1UD8L0G7nIc' 'https://www.youtube.com/watch?v=84xF0B-yUn4' 'https://www.youtube.com/watch?v=wdBT-u-Uv2Y' 'https://www.youtube.com/watch?v=o9ycWt9JbK0'
