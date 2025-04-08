@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import argparse
 import json
 import os
@@ -20,10 +21,29 @@ def get_video_id(url):
     return url.split("=")[-1]
 
 
-def youtube_transcript(url, username, output_folder):
+def cameo_youtube_transcript(url, username, output_folder):
     video_id = get_video_id(url)
     try:
-        transcript = YouTubeTranscriptApi.get_transcript(video_id)
+        transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+
+        # 嘗試獲取繁體中文字幕
+        try:
+            transcript = transcript_list.find_transcript(['zh-Hant', 'zh-TW'])
+            # print(f"找到繁體中文字幕: {transcript.language} ({transcript.language_code})")
+        except:
+            # 如果沒有繁體中文字幕，使用第一個可用的字幕
+            transcript = next(iter(transcript_list))
+            # print(f"使用字幕: {transcript.language} ({transcript.language_code})")
+
+        # 獲取字幕內容
+        transcript_data = transcript.fetch()
+
+        result = ''
+        for item in transcript_data:
+            result += item['text'] + "\n"
+
+        print("result:", result)
+
         if output_folder is None:
             output_folder = f"data/users/{username.replace('@', '_').replace('.', '_')}/youtube_transcript/{datetime.now().strftime('%Y-%m-%d')}"
         if not os.path.exists(output_folder):
@@ -35,7 +55,7 @@ def youtube_transcript(url, username, output_folder):
             "time": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
             "id": str(uuid.uuid4()),
             "url": url,
-            "transcript": "\n".join([f"{entry['start']} {entry['text']}" for entry in transcript])
+            "transcript": result
         }
 
         file_name = f"type_youtube_transcript_time_{file_data['time'].replace(':', '_')}_id_{file_data['id']}.json"
@@ -54,7 +74,7 @@ def main():
     args = parse_args()
 
     for url in args.urls:
-        youtube_transcript(url, args.username, args.folder)
+        cameo_youtube_transcript(url, args.username, args.folder)
 
 
 if __name__ == '__main__':

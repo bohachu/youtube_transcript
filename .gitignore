@@ -1,3 +1,6 @@
 venv
 .idea*
 youtube-transcript-*
+cameo_youtube_transcript.egg-info/
+data/
+dist/
