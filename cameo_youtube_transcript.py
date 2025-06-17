@@ -40,7 +40,7 @@ def cameo_youtube_transcript(url, username, output_folder):
 
         result = ''
         for item in transcript_data:
-            result += item['text'] + "\n"
+            result += item.text + "\n"
 
         print("result:", result)
 
