@@ -12,7 +12,7 @@ setup(
     packages=find_packages(),
     py_modules=['cameo_youtube_transcript'],
     install_requires=[
-        'youtube_transcript_api==0.6.3',
+        'youtube_transcript_api==1.1.0',
     ],
     entry_points={
         'console_scripts': [
