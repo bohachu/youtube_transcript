@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="cameo-youtube-transcript",
-    version="1.1.0",
+    version="1.1.1",
     author="Bowen Chiu",
     author_email="cbh@cameo.tw",
     description="一個用於下載 YouTube 影片字幕的工具",
